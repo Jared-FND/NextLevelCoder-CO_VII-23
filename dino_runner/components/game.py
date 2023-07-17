@@ -2,17 +2,18 @@ import pygame
 import random
 from dino_runner.components.dinosaur import Dinosaur
 from dino_runner.components.cloud import Cloud
-
+from dino_runner.components.faros import Faros
 from dino_runner.utils.constants import (
     BG,
     ICON,
     SCREEN_HEIGHT,
     SCREEN_WIDTH,
     TITLE,
-    FPS, BACKGROUND,PINES,SKY
+    FPS, TRAKLINE1,SKY
 )
 
 class Game:
+
     def __init__(self):
         pygame.init()
         pygame.display.set_caption(TITLE)
@@ -22,22 +23,30 @@ class Game:
         self.playing = False
         self.game_speed = 20
         self.x_pos_bg = 0
-        self.y_pos_bg = -575
+        self.y_pos_bg =-450
         self.player = Dinosaur()
         self.sky_list = pygame.sprite.Group()
+        self.faro_list = pygame.sprite.Group()
+        
 
     def run(self):
         # Game loop: events - update - draw
         self.playing = True
         for i in range(5):
            cloud = Cloud()
-           cloud.rect.x = random.randrange(1100)
-           cloud.rect.y = random.randrange(50)
+           cloud.rect.x = random.randrange(0, 1100, 180)
+           cloud.rect.y = random.randrange(20)
            self.sky_list.add(cloud)
-    
+        
+
+        for i in range(40):
+           faros = Faros()
+           faros.rect.x = random.randrange(0, 1100, 180)
+           faros.rect.y = 305
+           self.sky_list.add(faros)
+            
         while self.playing:
-            for sky in self.sky_list:
-                sky.update()
+          
             self.events()
             self.update()
             self.draw()
@@ -50,31 +59,35 @@ class Game:
 
     def update(self):
         self.player.update(pygame.key.get_pressed())
+        for sky in self.sky_list:
+                sky.update()
+        for faro in self.faro_list:
+                faro.uupdate()
+            
         
        
 
     def draw(self):
         self.clock.tick(FPS)
         self.screen.fill((255, 255, 255))
+        self.faro_list.draw(self.screen)
         self.draw_background()
-        self.player.draw(self.screen)  
         self.sky_list.draw(self.screen)
+        self.player.draw(self.screen)
         pygame.display.update()
         pygame.display.flip()
        
+
     def draw_background(self):
-        image_width = BACKGROUND.get_width()
+        image_width = TRAKLINE1.get_width()
         self.screen.blit(SKY, (0,0))
-        self.screen.blit(PINES,  (self.x_pos_bg, self.y_pos_bg))
-        self.screen.blit(PINES, (image_width + self.x_pos_bg, self.y_pos_bg))
-        self.screen.blit(BACKGROUND, (self.x_pos_bg, self.y_pos_bg))
-        self.screen.blit(BACKGROUND, (image_width + self.x_pos_bg, self.y_pos_bg))
         
+        self.screen.blit(TRAKLINE1, (self.x_pos_bg, self.y_pos_bg))
         
-        
+        self.screen.blit(TRAKLINE1 ,(image_width + self.x_pos_bg, self.y_pos_bg))
+
         if self.x_pos_bg <= -image_width:
-            self.screen.blit(PINES, (image_width + self.x_pos_bg, self.y_pos_bg))
-            self.screen.blit(BACKGROUND, (image_width + self.x_pos_bg, self.y_pos_bg))
-            
+           
+            self.screen.blit(TRAKLINE1, (image_width + self.x_pos_bg, self.y_pos_bg))
             self.x_pos_bg = 0
         self.x_pos_bg -= self.game_speed

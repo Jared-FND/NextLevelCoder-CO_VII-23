@@ -69,9 +69,17 @@ BG = pygame.image.load(os.path.join(IMG_DIR, 'Other/Track.png'))
 
 HEART = pygame.image.load(os.path.join(IMG_DIR, 'Other/SmallHeart.png'))
 
-BACKGROUND = pygame.image.load(os.path.join(IMG_DIR, 'Other/7.png'))
+TRAKLINE1 = pygame.image.load(os.path.join(IMG_DIR, 'Other/trackline_1.png'))
+TRAKLINE2 = pygame.image.load(os.path.join(IMG_DIR, 'Other/trackline_2.png'))
+
 CLOUDS= pygame.image.load(os.path.join(IMG_DIR, 'Other/clouds_1.png'))
 PINES = pygame.image.load(os.path.join(IMG_DIR, 'Other/3.png'))
 SKY = pygame.image.load(os.path.join(IMG_DIR, 'Other/sky.png'))
+FAROS = [
+       pygame.image.load(os.path.join(IMG_DIR, 'Other/faro1.png')),
+       pygame.image.load(os.path.join(IMG_DIR, 'Other/faro2.png')),
+      
+
+        ]
 
 DEFAULT_TYPE = "default"

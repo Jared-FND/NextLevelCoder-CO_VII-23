@@ -10,7 +10,7 @@ class Cloud(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
 
     def update(self):
-        self.rect.x -= 1
+        self.rect.x -= 5
         if self.rect.x < -344:
             self.rect.x = 1110
-            self.rect.y = random.randrange(50)
+            self.rect.y = random.randrange(20)
