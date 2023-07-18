@@ -12,8 +12,8 @@ IMG_DIR = os.path.join(os.path.dirname(__file__), "..", "assets")
 ICON = pygame.image.load(os.path.join(IMG_DIR, "DinoWallpaper.png"))
 
 RUNNING = [
-    pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoRun1.png")),
-    pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoRun2.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "Robot/robot_walk1.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "Robot/robot_walk2.png")),
 ]
 
 RUNNING_SHIELD = [
@@ -26,13 +26,13 @@ RUNNING_HAMMER = [
     pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoRun2.png")),
 ]
 
-JUMPING = pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoJump.png"))
+JUMPING = pygame.image.load(os.path.join(IMG_DIR, "Robot/robot_jump.png"))
 JUMPING_SHIELD = pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoJumpShield.png"))
 JUMPING_HAMMER = pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoJumpHammer.png"))
 
 DUCKING = [
-    pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoDuck1.png")),
-    pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoDuck2.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "Robot/robot_dunk1.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "Robot/robot_dunk2.png")),
 ]
 
 DUCKING_SHIELD = [
@@ -68,5 +68,18 @@ HAMMER = pygame.image.load(os.path.join(IMG_DIR, 'Other/hammer.png'))
 BG = pygame.image.load(os.path.join(IMG_DIR, 'Other/Track.png'))
 
 HEART = pygame.image.load(os.path.join(IMG_DIR, 'Other/SmallHeart.png'))
+
+TRAKLINE1 = pygame.image.load(os.path.join(IMG_DIR, 'Other/trackline_1.png'))
+TRAKLINE2 = pygame.image.load(os.path.join(IMG_DIR, 'Other/trackline_2.png'))
+
+CLOUDS= pygame.image.load(os.path.join(IMG_DIR, 'Other/clouds_1.png'))
+PINES = pygame.image.load(os.path.join(IMG_DIR, 'Other/3.png'))
+SKY = pygame.image.load(os.path.join(IMG_DIR, 'Other/sky.png'))
+FAROS = [
+       pygame.image.load(os.path.join(IMG_DIR, 'Other/faro1.png')),
+       pygame.image.load(os.path.join(IMG_DIR, 'Other/faro2.png')),
+      
+
+        ]
 
 DEFAULT_TYPE = "default"
