@@ -81,5 +81,12 @@ FAROS = [
       
 
         ]
-
+ENEMY_ROBOT =[ 
+            pygame.image.load(os.path.join(IMG_DIR, 'Robot/robot_enemy.png')),
+            pygame.image.load(os.path.join(IMG_DIR, 'Robot/robot_enemy2.png')),
+            pygame.image.load(os.path.join(IMG_DIR, 'Robot/robot_enemy3.png'))
+            ]
+ENEMY_SKY_ROBOT =[
+      pygame.image.load(os.path.join(IMG_DIR, 'Robot/sky_enemy_robot.png')),
+]
 DEFAULT_TYPE = "default"
