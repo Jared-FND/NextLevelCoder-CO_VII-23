@@ -16,7 +16,7 @@ class Faros(pygame.sprite.Sprite):
         
 
         
-        self.rect.x -= 5
+        self.rect.x -= 20
         if self.rect.x < 0:
             self.faros_count += 1
             self.rect.x = 1110
