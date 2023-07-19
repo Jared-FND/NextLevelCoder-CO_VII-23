@@ -8,5 +8,5 @@ class Cactus (Obstacle):
         images = SMALL_CACTUS + LARGE_CACTUS
         self.image = random.choice(images)
         super().__init__(self.image)
-        self.rect.y = 300
+        self.rect.y = 400 - self.image.get_height()
        

@@ -12,4 +12,4 @@ class EnemyRobot (Obstacle):
     def update(self, game_speed):
         self.rect.x -= game_speed
         self.counter += 1
-        self.image = ENEMY_ROBOT[0] if self.counter % 4 else ENEMY_ROBOT[1] 
+        self.image = ENEMY_ROBOT[0] if self.counter % 2 == 0 else ENEMY_ROBOT[1] 

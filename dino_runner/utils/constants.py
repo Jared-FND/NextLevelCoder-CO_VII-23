@@ -87,4 +87,6 @@ ENEMY_ROBOT =[
             pygame.image.load(os.path.join(IMG_DIR, 'Robot/robot_enemy3.png'))
             ]
 ENEMY_SKY_ROBOT =  pygame.image.load(os.path.join(IMG_DIR, 'Robot/sky_enemy_robot.png'))
+
+SHOT =  pygame.image.load(os.path.join(IMG_DIR, 'Other/shot.png'))
 DEFAULT_TYPE = "default"

@@ -4,6 +4,7 @@ from dino_runner.components.dinosaur import Dinosaur
 from dino_runner.components.cloud import Cloud
 from dino_runner.components.faros import Faros
 from dino_runner.components.obstacules.obstacule_manager import ObstacleMager
+from dino_runner.components.power_up.powerup_manager import PowerUpManager
 from dino_runner.utils.constants import (
     BG,
     ICON,
@@ -29,18 +30,20 @@ class Game:
         self.sky_list = pygame.sprite.Group()
         self.faro_list = pygame.sprite.Group()
         self.obstacle_manajer = ObstacleMager()
+        self.poweup_manajer = PowerUpManager()
+        self.score = 0
 
     def run(self):
         # Game loop: events - update - draw
         self.playing = True
-        for i in range(5):
+        for i in range(4):
            cloud = Cloud()
            cloud.rect.x = random.randrange(0, 1100, 180)
            cloud.rect.y = random.randrange(20)
            self.sky_list.add(cloud)
         
 
-        for i in range(40):
+        for i in range(3):
            faros = Faros()
            faros.rect.x = random.randrange(0, 1100, 180)
            faros.rect.y = 305
@@ -61,13 +64,17 @@ class Game:
     def update(self):
         self.player.update(pygame.key.get_pressed())
         self.obstacle_manajer.update(self)
+        self.poweup_manajer.update(self)
+        self.increase_score()
+
         for sky in self.sky_list:
                 sky.update()
         for faro in self.faro_list:
                 faro.update()
             
         
-       
+    def increase_score(self):
+        self.score += 1
 
     def draw(self):
         self.clock.tick(FPS)
@@ -79,6 +86,7 @@ class Game:
         self.sky_list.draw(self.screen)
         self.player.draw(self.screen)
         self.obstacle_manajer.draw(self.screen)
+        self.poweup_manajer.draw(self.screen)
         
         pygame.display.update()
         pygame.display.flip()

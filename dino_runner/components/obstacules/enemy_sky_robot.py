@@ -6,7 +6,7 @@ class EnemySkyRobot (Obstacle):
     def __init__(self):
         self.image = ENEMY_SKY_ROBOT
         super().__init__(self.image)
-        self.rect.y = 300
+        self.rect.y = 200
         self.counter = 0
         
     def update(self, game_speed):
