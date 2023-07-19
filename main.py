@@ -4,6 +4,5 @@ if __name__ == "__main__":
     game = Game()
     game.run()
 
-# ==== TAREA Clase 1 ====
-# 1. herencia en programacion
-# 2. sprite, Pygame-rect
+# Agregar mas obstaculos:
+# 1. bird con animacion, +2 nuevos obstaculos
