@@ -4,5 +4,7 @@ if __name__ == "__main__":
     game = Game()
     game.run()
 
-# Agregar mas obstaculos:
-# 1. bird con animacion, +2 nuevos obstaculos
+# TAREA
+# tener el codigo completo antes de iniciar la clase + tareas (revisaremos los repositorios)
+# agregar mas powerups (1+)
+# cosas extra (sonido, skins, tema, animaciones, obstaculos interactivos, textos') NO PONER MENU NI PANTALLA DE GAMEOVER
