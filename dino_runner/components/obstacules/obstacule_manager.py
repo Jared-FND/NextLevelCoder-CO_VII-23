@@ -2,6 +2,7 @@ from dino_runner.components.obstacules.cactus import Cactus
 from dino_runner.components.obstacules.bird import Bird
 from dino_runner.components.obstacules.enemy_robot import EnemyRobot
 from dino_runner.components.obstacules.enemy_sky_robot import EnemySkyRobot
+from dino_runner.utils.constants import SHIELD_TYPE,DEFAULT_TYPE
 import random, pygame
 
 
@@ -19,10 +20,14 @@ class ObstacleMager ():
             self.has_obstacle = True
         else:
             self.has_obstacle = False
-        self.obstacle.update(game.game_speed)
+        self.obstacle.update(game)
         if game.player.rect.colliderect(self.obstacle.rect):
-            pygame.time.delay(300)
-            game.playing = False
+            if game.player.type == SHIELD_TYPE:
+                game.player.type = DEFAULT_TYPE
+                self.has_obstacle = False
+            else:
+                pygame.time.delay(300)
+                game.playing = False
 
     def create_obstacle(self):
         Obstacle_list = [Cactus(), Bird(), EnemyRobot(),EnemySkyRobot()]
@@ -31,4 +36,5 @@ class ObstacleMager ():
 
     def draw(self,screen):
         if self.has_obstacle:
+            
             self.obstacle.draw(screen)

@@ -9,7 +9,7 @@ class EnemySkyRobot (Obstacle):
         self.rect.y = 200
         self.counter = 0
         
-    def update(self, game_speed):
-        self.rect.x -= game_speed
+    def update(self, game):
+        self.rect.x -= game.game_speed
         self.counter += 1
         
